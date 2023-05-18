@@ -31,7 +31,31 @@ RSpec.configure do |config|
             }
           }
         }
-      ]
+      ],
+      components: {
+        schemas: {
+          person: {
+            type: "object",
+            properties: {
+              id: {type: "integer"},
+              first_name: {type: "string"},
+              last_name: {type: "string"},
+              created_at: {type: "string"},
+              updated_at: {type: "string"}
+            },
+            required: %w[id first_name last_name created_at updated_at],
+            additionalProperties: false
+          },
+          error: {
+            type: "object",
+            properties: {
+              error: {type: "string"}
+            },
+            required: %w[error],
+            additionalProperties: false
+          }
+        }
+      }
     }
   }
 
